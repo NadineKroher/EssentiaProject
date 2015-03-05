@@ -9,6 +9,20 @@
 /* Begin PBXBuildFile section */
 		D20BCEFC1AA78CDF00C178A2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D20BCEFB1AA78CDF00C178A2 /* main.cpp */; };
 		D20BCF081AA85F0A00C178A2 /* libessentia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D20BCF071AA85F0A00C178A2 /* libessentia.a */; };
+		D20BCF101AA862BE00C178A2 /* libtag.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D20BCF0F1AA862BE00C178A2 /* libtag.dylib */; };
+		D20BCF111AA8630B00C178A2 /* libyaml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D20BCF0B1AA861B600C178A2 /* libyaml.a */; };
+		D20BCF131AA8631100C178A2 /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D20BCF121AA8631100C178A2 /* libvorbis.a */; };
+		D20BCF151AA8632800C178A2 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D20BCF141AA8632800C178A2 /* libavcodec.a */; };
+		D20BCF171AA8634300C178A2 /* libfftw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D20BCF161AA8634300C178A2 /* libfftw3.a */; };
+		D20BCF191AA8646600C178A2 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D20BCF181AA8646600C178A2 /* libavutil.a */; };
+		D20BCF1F1AA8648600C178A2 /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D20BCF1A1AA8648600C178A2 /* libavdevice.a */; };
+		D20BCF201AA8648600C178A2 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D20BCF1B1AA8648600C178A2 /* libavfilter.a */; };
+		D20BCF211AA8648600C178A2 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D20BCF1C1AA8648600C178A2 /* libavformat.a */; };
+		D20BCF221AA8648600C178A2 /* libavresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D20BCF1D1AA8648600C178A2 /* libavresample.a */; };
+		D20BCF231AA8648600C178A2 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D20BCF1E1AA8648600C178A2 /* libavutil.a */; };
+		D20BCF251AA8649F00C178A2 /* libfftw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D20BCF241AA8649F00C178A2 /* libfftw3.a */; };
+		D20BCF271AA864B200C178A2 /* libfftw3f.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D20BCF261AA864B200C178A2 /* libfftw3f.a */; };
+		D20BCF291AA864CA00C178A2 /* libsamplerate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D20BCF281AA864CA00C178A2 /* libsamplerate.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +41,20 @@
 		D20BCEF81AA78CDF00C178A2 /* EssentiaMelodiaVsVamp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EssentiaMelodiaVsVamp; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20BCEFB1AA78CDF00C178A2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D20BCF071AA85F0A00C178A2 /* libessentia.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libessentia.a; path = ../../../GIT/essentiaFork/build/src/libessentia.a; sourceTree = "<group>"; };
+		D20BCF0B1AA861B600C178A2 /* libyaml.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libyaml.a; path = ../../../../../usr/local/lib/libyaml.a; sourceTree = "<group>"; };
+		D20BCF0F1AA862BE00C178A2 /* libtag.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.dylib; path = ../../../../../usr/local/lib/libtag.dylib; sourceTree = "<group>"; };
+		D20BCF121AA8631100C178A2 /* libvorbis.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvorbis.a; path = ../../../../../usr/local/lib/libvorbis.a; sourceTree = "<group>"; };
+		D20BCF141AA8632800C178A2 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = ../../../../../usr/local/lib/libavcodec.a; sourceTree = "<group>"; };
+		D20BCF161AA8634300C178A2 /* libfftw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3.a; path = ../../../../../usr/local/lib/libfftw3.a; sourceTree = "<group>"; };
+		D20BCF181AA8646600C178A2 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = ../../../../../usr/local/lib/libavutil.a; sourceTree = "<group>"; };
+		D20BCF1A1AA8648600C178A2 /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavdevice.a; path = ../../../../../usr/local/lib/libavdevice.a; sourceTree = "<group>"; };
+		D20BCF1B1AA8648600C178A2 /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavfilter.a; path = ../../../../../usr/local/lib/libavfilter.a; sourceTree = "<group>"; };
+		D20BCF1C1AA8648600C178A2 /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = ../../../../../usr/local/lib/libavformat.a; sourceTree = "<group>"; };
+		D20BCF1D1AA8648600C178A2 /* libavresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavresample.a; path = ../../../../../usr/local/lib/libavresample.a; sourceTree = "<group>"; };
+		D20BCF1E1AA8648600C178A2 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = ../../../../../usr/local/lib/libavutil.a; sourceTree = "<group>"; };
+		D20BCF241AA8649F00C178A2 /* libfftw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3.a; path = ../../../../../usr/local/lib/libfftw3.a; sourceTree = "<group>"; };
+		D20BCF261AA864B200C178A2 /* libfftw3f.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f.a; path = ../../../../../usr/local/lib/libfftw3f.a; sourceTree = "<group>"; };
+		D20BCF281AA864CA00C178A2 /* libsamplerate.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsamplerate.a; path = ../../../../../usr/local/lib/libsamplerate.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,7 +62,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D20BCF201AA8648600C178A2 /* libavfilter.a in Frameworks */,
+				D20BCF101AA862BE00C178A2 /* libtag.dylib in Frameworks */,
 				D20BCF081AA85F0A00C178A2 /* libessentia.a in Frameworks */,
+				D20BCF211AA8648600C178A2 /* libavformat.a in Frameworks */,
+				D20BCF1F1AA8648600C178A2 /* libavdevice.a in Frameworks */,
+				D20BCF171AA8634300C178A2 /* libfftw3.a in Frameworks */,
+				D20BCF231AA8648600C178A2 /* libavutil.a in Frameworks */,
+				D20BCF291AA864CA00C178A2 /* libsamplerate.a in Frameworks */,
+				D20BCF221AA8648600C178A2 /* libavresample.a in Frameworks */,
+				D20BCF111AA8630B00C178A2 /* libyaml.a in Frameworks */,
+				D20BCF151AA8632800C178A2 /* libavcodec.a in Frameworks */,
+				D20BCF131AA8631100C178A2 /* libvorbis.a in Frameworks */,
+				D20BCF271AA864B200C178A2 /* libfftw3f.a in Frameworks */,
+				D20BCF251AA8649F00C178A2 /* libfftw3.a in Frameworks */,
+				D20BCF191AA8646600C178A2 /* libavutil.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +86,20 @@
 		D20BCEEF1AA78CDF00C178A2 = {
 			isa = PBXGroup;
 			children = (
+				D20BCF181AA8646600C178A2 /* libavutil.a */,
+				D20BCF161AA8634300C178A2 /* libfftw3.a */,
+				D20BCF141AA8632800C178A2 /* libavcodec.a */,
+				D20BCF121AA8631100C178A2 /* libvorbis.a */,
+				D20BCF1A1AA8648600C178A2 /* libavdevice.a */,
+				D20BCF281AA864CA00C178A2 /* libsamplerate.a */,
+				D20BCF1B1AA8648600C178A2 /* libavfilter.a */,
+				D20BCF261AA864B200C178A2 /* libfftw3f.a */,
+				D20BCF241AA8649F00C178A2 /* libfftw3.a */,
+				D20BCF1C1AA8648600C178A2 /* libavformat.a */,
+				D20BCF1D1AA8648600C178A2 /* libavresample.a */,
+				D20BCF1E1AA8648600C178A2 /* libavutil.a */,
+				D20BCF0F1AA862BE00C178A2 /* libtag.dylib */,
+				D20BCF0B1AA861B600C178A2 /* libyaml.a */,
 				D20BCF071AA85F0A00C178A2 /* libessentia.a */,
 				D20BCEFA1AA78CDF00C178A2 /* EssentiaMelodiaVsVamp */,
 				D20BCEF91AA78CDF00C178A2 /* Products */,
@@ -210,10 +266,14 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/include/essentia/,
+					/usr/local/include/taglib/,
+					"/usr/local/include/libavcodec/**",
+					/usr/local/include/,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/GinSonic/GIT/essentiaFork/build/src,
+					/usr/local/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -226,10 +286,14 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/include/essentia/,
+					/usr/local/include/taglib/,
+					"/usr/local/include/libavcodec/**",
+					/usr/local/include/,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/GinSonic/GIT/essentiaFork/build/src,
+					/usr/local/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

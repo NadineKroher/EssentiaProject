@@ -8,9 +8,23 @@
 
 #include <iostream>
 #include "essentia.h"
+#include "taglib.h"
+#include "fftw3.h"
+#include "avcodec.h"
+
+using namespace std;
+using namespace essentia;
+using namespace essentia::standard;
 
 int main(int argc, const char * argv[]) {
+    
+    essentia::init();
+    
+    
     // insert code here...
     std::cout << "Hello, World!\n";
+    
+    
+    
     return 0;
 }
