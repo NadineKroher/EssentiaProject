@@ -8,6 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		D281A7371AB448C300106A7C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D281A7361AB448C300106A7C /* main.cpp */; };
+		D281A73E1AB44BED00106A7C /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A73D1AB44BED00106A7C /* libavutil.a */; };
+		D281A7411AB44BFE00106A7C /* libfftw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A73F1AB44BFE00106A7C /* libfftw3.a */; };
+		D281A7421AB44BFE00106A7C /* libfftw3f.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A7401AB44BFE00106A7C /* libfftw3f.a */; };
+		D281A7441AB44C0700106A7C /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A7431AB44C0700106A7C /* libavcodec.a */; };
+		D281A7461AB44C0A00106A7C /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A7451AB44C0A00106A7C /* libavdevice.a */; };
+		D281A7481AB44C4F00106A7C /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A7471AB44C4F00106A7C /* libvorbis.a */; };
+		D281A74A1AB44C6000106A7C /* libsamplerate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A7491AB44C6000106A7C /* libsamplerate.a */; };
+		D281A74C1AB44C6B00106A7C /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A74B1AB44C6B00106A7C /* libavfilter.a */; };
+		D281A74E1AB44C7D00106A7C /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A74D1AB44C7D00106A7C /* libavformat.a */; };
+		D281A7501AB44C8500106A7C /* libavresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A74F1AB44C8500106A7C /* libavresample.a */; };
+		D281A7521AB44C9D00106A7C /* libtag.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A7511AB44C9D00106A7C /* libtag.dylib */; };
+		D281A7541AB44CA200106A7C /* libyaml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A7531AB44CA200106A7C /* libyaml.a */; };
+		D281A7561AB44CA900106A7C /* libessentia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A7551AB44CA900106A7C /* libessentia.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +38,19 @@
 /* Begin PBXFileReference section */
 		D281A7331AB448C300106A7C /* XCodeExampleProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = XCodeExampleProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		D281A7361AB448C300106A7C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D281A73D1AB44BED00106A7C /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = ../../../../../../usr/local/lib/libavutil.a; sourceTree = "<group>"; };
+		D281A73F1AB44BFE00106A7C /* libfftw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3.a; path = ../../../../../../usr/local/lib/libfftw3.a; sourceTree = "<group>"; };
+		D281A7401AB44BFE00106A7C /* libfftw3f.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f.a; path = ../../../../../../usr/local/lib/libfftw3f.a; sourceTree = "<group>"; };
+		D281A7431AB44C0700106A7C /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = ../../../../../../usr/local/lib/libavcodec.a; sourceTree = "<group>"; };
+		D281A7451AB44C0A00106A7C /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavdevice.a; path = ../../../../../../usr/local/lib/libavdevice.a; sourceTree = "<group>"; };
+		D281A7471AB44C4F00106A7C /* libvorbis.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvorbis.a; path = ../../../../../../usr/local/lib/libvorbis.a; sourceTree = "<group>"; };
+		D281A7491AB44C6000106A7C /* libsamplerate.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsamplerate.a; path = ../../../../../../usr/local/lib/libsamplerate.a; sourceTree = "<group>"; };
+		D281A74B1AB44C6B00106A7C /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavfilter.a; path = ../../../../../../usr/local/lib/libavfilter.a; sourceTree = "<group>"; };
+		D281A74D1AB44C7D00106A7C /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = ../../../../../../usr/local/lib/libavformat.a; sourceTree = "<group>"; };
+		D281A74F1AB44C8500106A7C /* libavresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavresample.a; path = ../../../../../../usr/local/lib/libavresample.a; sourceTree = "<group>"; };
+		D281A7511AB44C9D00106A7C /* libtag.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.dylib; path = ../../../../../../usr/local/lib/libtag.dylib; sourceTree = "<group>"; };
+		D281A7531AB44CA200106A7C /* libyaml.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libyaml.a; path = ../../../../../../usr/local/lib/libyaml.a; sourceTree = "<group>"; };
+		D281A7551AB44CA900106A7C /* libessentia.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libessentia.a; path = ../../../../../../usr/local/lib/libessentia.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +58,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D281A74E1AB44C7D00106A7C /* libavformat.a in Frameworks */,
+				D281A7441AB44C0700106A7C /* libavcodec.a in Frameworks */,
+				D281A7461AB44C0A00106A7C /* libavdevice.a in Frameworks */,
+				D281A7411AB44BFE00106A7C /* libfftw3.a in Frameworks */,
+				D281A7421AB44BFE00106A7C /* libfftw3f.a in Frameworks */,
+				D281A7501AB44C8500106A7C /* libavresample.a in Frameworks */,
+				D281A7481AB44C4F00106A7C /* libvorbis.a in Frameworks */,
+				D281A73E1AB44BED00106A7C /* libavutil.a in Frameworks */,
+				D281A74A1AB44C6000106A7C /* libsamplerate.a in Frameworks */,
+				D281A74C1AB44C6B00106A7C /* libavfilter.a in Frameworks */,
+				D281A7521AB44C9D00106A7C /* libtag.dylib in Frameworks */,
+				D281A7541AB44CA200106A7C /* libyaml.a in Frameworks */,
+				D281A7561AB44CA900106A7C /* libessentia.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +80,19 @@
 		D281A72A1AB448C300106A7C = {
 			isa = PBXGroup;
 			children = (
+				D281A7551AB44CA900106A7C /* libessentia.a */,
+				D281A7531AB44CA200106A7C /* libyaml.a */,
+				D281A7511AB44C9D00106A7C /* libtag.dylib */,
+				D281A74F1AB44C8500106A7C /* libavresample.a */,
+				D281A74D1AB44C7D00106A7C /* libavformat.a */,
+				D281A74B1AB44C6B00106A7C /* libavfilter.a */,
+				D281A7491AB44C6000106A7C /* libsamplerate.a */,
+				D281A7471AB44C4F00106A7C /* libvorbis.a */,
+				D281A7451AB44C0A00106A7C /* libavdevice.a */,
+				D281A7431AB44C0700106A7C /* libavcodec.a */,
+				D281A73F1AB44BFE00106A7C /* libfftw3.a */,
+				D281A7401AB44BFE00106A7C /* libfftw3f.a */,
+				D281A73D1AB44BED00106A7C /* libavutil.a */,
 				D281A7351AB448C300106A7C /* XCodeExampleProject */,
 				D281A7341AB448C300106A7C /* Products */,
 			);
@@ -202,6 +254,15 @@
 		D281A73B1AB448C300106A7C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+					/usr/local/include/taglib/,
+					/usr/local/include/essentia/,
+					"/usr/local/include/libavodec/**",
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -209,6 +270,15 @@
 		D281A73C1AB448C300106A7C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+					/usr/local/include/taglib/,
+					/usr/local/include/essentia/,
+					"/usr/local/include/libavodec/**",
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -8,6 +8,13 @@
 
 #include <iostream>
 
+#include "essentia.h"
+#include "taglib.h"
+#include "fftw3.h"
+#include <essentia/algorithmfactory.h>
+#include <essentia/essentiamath.h>
+#include <essentia/pool.h>
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
