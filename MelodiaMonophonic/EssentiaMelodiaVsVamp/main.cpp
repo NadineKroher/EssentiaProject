@@ -19,7 +19,7 @@ using namespace essentia::standard;
 int main(int argc, const char * argv[]) {
     
     // file path
-    string audioFilename="/Users/GinSonic/MTG/EssentiaProject/Data/Monophonic/wav/flute.wav";
+    string audioFilename="/Users/GinSonic/MTG/EssentiaProject/Data/Monophonic/wav/sax.wav";
     
     // parameters
     int sampleRate = 44100;
@@ -98,34 +98,36 @@ int main(int argc, const char * argv[]) {
         if (!frame.size())
             break;
         
-        if (isSilent(frame))
+        
+        if (isSilent(frame)){
+            pitchYin.push_back(0);
             continue;
+        }
         
         window->compute();
         spectrum->compute();
         pitchDetect->compute();
-        
         pitchYin.push_back(thisPitch);
     }
 
     
     // write to file
-    string csvFilename="/Users/GinSonic/MTG/EssentiaProject/Data/Monophonic/f0PolyMelodiaEssentia/flute.csv";
+    string csvFilename="/Users/GinSonic/MTG/EssentiaProject/Data/Monophonic/f0PolyMelodiaEssentia/sax.csv";
     ofstream outFile;
     outFile.open(csvFilename);
     for (int ii=0; ii<pitch.size(); ii++){
         outFile << float(ii)*hopSize/sampleRate << ", " << pitch[ii] << endl;
     }
-    string csvFilenameMono="/Users/GinSonic/MTG/EssentiaProject/Data/Monophonic/f0MonoMelodiaEssentia/flute.csv";
+    string csvFilenameMono="/Users/GinSonic/MTG/EssentiaProject/Data/Monophonic/f0MonoMelodiaEssentia/sax.csv";
     ofstream outFileMono;
     outFileMono.open(csvFilenameMono);
-    for (int ii=0; ii<pitch.size(); ii++){
+    for (int ii=0; ii<pitchMono.size(); ii++){
         outFileMono << float(ii)*hopSize/sampleRate << ", " << pitchMono[ii] << endl;
     }
-    string csvFilenameYin="/Users/GinSonic/MTG/EssentiaProject/Data/Monophonic/f0Yin/flute.csv";
+    string csvFilenameYin="/Users/GinSonic/MTG/EssentiaProject/Data/Monophonic/f0Yin/sax.csv";
     ofstream outFileYin;
     outFileYin.open(csvFilenameYin);
-    for (int ii=0; ii<pitch.size(); ii++){
+    for (int ii=0; ii<pitchYin.size(); ii++){
         outFileYin << float(ii)*hopSize/sampleRate << ", " << pitchYin[ii] << endl;
     }
     
