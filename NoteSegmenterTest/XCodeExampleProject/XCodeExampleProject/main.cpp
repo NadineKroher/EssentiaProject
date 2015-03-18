@@ -18,6 +18,6 @@
 using namespace essentia;
 using namespace std;
 int main(int argc, const char * argv[]) {
-    string audioFilename="/Users/GinSonic/MTG/EssentiaProject/Data/monophonicExamples/test.wav";
+    string audioFilename="/Users/GinSonic/MTG/EssentiaProject/Data/monoExamples/test.wav";
     return 0;
 }
