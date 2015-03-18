@@ -19,7 +19,7 @@ using namespace essentia::standard;
 int main(int argc, const char * argv[]) {
     
     // file path
-    string audioFilename="/Users/GinSonic/MTG/EssentiaProject/Data/Monophonic/wav/sax.wav";
+    string audioFilename="/Users/GinSonic/MTG/EssentiaProject/Data/monoExamples/bassLoop.wav";
     
     // parameters
     int sampleRate = 44100;
@@ -33,25 +33,29 @@ int main(int argc, const char * argv[]) {
     
     // MELODIA
     Algorithm* audio = factory.create("MonoLoader","filename", audioFilename,"sampleRate", sampleRate);
-    Algorithm* predmelMono = factory.create("MelodiaMonophonic", "sampleRate", sampleRate, "frameSize", frameSize, "hopSize", hopSize, "voicingTolerance", voicingTolerance);
-    Algorithm* predmel = factory.create("PredominantMelody", "sampleRate", sampleRate, "frameSize", frameSize, "hopSize", hopSize, "voicingTolerance", voicingTolerance);
+    Algorithm* predmelMono = factory.create("PitchMelodia", "sampleRate", sampleRate, "frameSize", frameSize, "hopSize", hopSize);
+    Algorithm* el = factory.create("EqualLoudness","sampleRate", sampleRate);
+    //Algorithm* predmel = factory.create("PredominantMelody", "sampleRate", sampleRate, "frameSize", frameSize, "hopSize", hopSize, "voicingTolerance", voicingTolerance);
     
     // Algorithm I/O setup
-    vector<Real> audioVec, pitch, pitchConfidence, pitchMono, pitchConfidenceMono;
+    vector<Real> audioVec, audioEQ, pitch, pitchConfidence, pitchMono, pitchConfidenceMono;
     audio->output("audio").set(audioVec);
-    predmel->input("signal").set(audioVec);
-    predmel->output("pitch").set(pitch);
-    predmel->output("pitchConfidence").set(pitchConfidence);
-    predmelMono->input("signal").set(audioVec);
+    el->input("signal").set(audioVec);
+    el->output("signal").set(audioEQ);
+    //predmel->input("signal").set(audioVec);
+    //predmel->output("pitch").set(pitch);
+    //predmel->output("pitchConfidence").set(pitchConfidence);
+    predmelMono->input("signal").set(audioEQ);
     predmelMono->output("pitch").set(pitchMono);
     predmelMono->output("pitchConfidence").set(pitchConfidenceMono);
     
     // Compute
     audio->compute();
-    predmel->compute();
+    el->compute();
+    //predmel->compute();
     predmelMono->compute();
 
-    
+    /*
     // YIN FFT
     Algorithm* frameCutter = factory.create("FrameCutter",
                                             "frameSize", frameSize,
@@ -110,36 +114,40 @@ int main(int argc, const char * argv[]) {
         pitchYin.push_back(thisPitch);
     }
 
-    
+    */
     // write to file
+    /*
     string csvFilename="/Users/GinSonic/MTG/EssentiaProject/Data/Monophonic/f0PolyMelodiaEssentia/sax.csv";
     ofstream outFile;
     outFile.open(csvFilename);
     for (int ii=0; ii<pitch.size(); ii++){
         outFile << float(ii)*hopSize/sampleRate << ", " << pitch[ii] << endl;
     }
-    string csvFilenameMono="/Users/GinSonic/MTG/EssentiaProject/Data/Monophonic/f0MonoMelodiaEssentia/sax.csv";
+    */
+    string csvFilenameMono="/Users/GinSonic/MTG/EssentiaProject/Data/monoExamples/bassLoop.csv";
     ofstream outFileMono;
     outFileMono.open(csvFilenameMono);
     for (int ii=0; ii<pitchMono.size(); ii++){
         outFileMono << float(ii)*hopSize/sampleRate << ", " << pitchMono[ii] << endl;
     }
+    
+    /*
     string csvFilenameYin="/Users/GinSonic/MTG/EssentiaProject/Data/Monophonic/f0Yin/sax.csv";
     ofstream outFileYin;
     outFileYin.open(csvFilenameYin);
     for (int ii=0; ii<pitchYin.size(); ii++){
         outFileYin << float(ii)*hopSize/sampleRate << ", " << pitchYin[ii] << endl;
     }
-    
+    */
     
     // clean up
     delete audio;
-    delete predmel;
+    //delete predmel;
     delete predmelMono;
-    delete frameCutter;
-    delete pitchDetect;
-    delete window;
-    delete spectrum;
+    //delete frameCutter;
+    //delete pitchDetect;
+    //delete window;
+    //delete spectrum;
     
     essentia::shutdown();
     
