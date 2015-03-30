@@ -1,0 +1,21 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 Update 30/03/2015\
+\
+Xcode tutorial:\
+- revised version \
+- text and images sent to Dmitry for incorporation in the documentation\
+\
+Vocal/Non-vocal segmentation:\
+- data: selected 10 audio tracks with varying genre and instrumentation (Pop, Flamenco, Singer/songwriter, Latin, etc.)\
+- ground truth annotation: manually annotated vocal sections\
+- first experiments: using MFCCs + WEKA \'97> it seems that there the possible accuracies range around 75-80% on a frame-basis. Combined with melodia this could yield to voicing improvement. Still we should explore some other options - also to avoid machine learning in Essentia (for which as far as I know there is still no framework). \
+- the spectral band ratio seems to work very well for several examples, but not at all for others\
+- bark bands seem to be very discriminative - but: absolute thresholds depend strongly on the specific track \'97> we could try a baysian approach based on the voicing detection as a first guess - but this again is research and not development\'85\
+\
+\
+}
