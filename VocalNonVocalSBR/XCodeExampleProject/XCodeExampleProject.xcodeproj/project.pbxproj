@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D281A7371AB448C300106A7C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D281A7361AB448C300106A7C /* main.cpp */; };
+		D281A73E1AB44BED00106A7C /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A73D1AB44BED00106A7C /* libavutil.a */; };
+		D281A7411AB44BFE00106A7C /* libfftw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A73F1AB44BFE00106A7C /* libfftw3.a */; };
+		D281A7421AB44BFE00106A7C /* libfftw3f.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A7401AB44BFE00106A7C /* libfftw3f.a */; };
+		D281A7441AB44C0700106A7C /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A7431AB44C0700106A7C /* libavcodec.a */; };
+		D281A7461AB44C0A00106A7C /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A7451AB44C0A00106A7C /* libavdevice.a */; };
+		D281A7481AB44C4F00106A7C /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A7471AB44C4F00106A7C /* libvorbis.a */; };
+		D281A74A1AB44C6000106A7C /* libsamplerate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A7491AB44C6000106A7C /* libsamplerate.a */; };
+		D281A74C1AB44C6B00106A7C /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A74B1AB44C6B00106A7C /* libavfilter.a */; };
+		D281A74E1AB44C7D00106A7C /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A74D1AB44C7D00106A7C /* libavformat.a */; };
+		D281A7501AB44C8500106A7C /* libavresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A74F1AB44C8500106A7C /* libavresample.a */; };
+		D281A7521AB44C9D00106A7C /* libtag.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A7511AB44C9D00106A7C /* libtag.dylib */; };
+		D281A7541AB44CA200106A7C /* libyaml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A7531AB44CA200106A7C /* libyaml.a */; };
+		D281A7561AB44CA900106A7C /* libessentia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D281A7551AB44CA900106A7C /* libessentia.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D281A7311AB448C300106A7C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D281A7331AB448C300106A7C /* XCodeExampleProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = XCodeExampleProject; sourceTree = BUILT_PRODUCTS_DIR; };
+		D281A7361AB448C300106A7C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D281A73D1AB44BED00106A7C /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = ../../../../../../usr/local/lib/libavutil.a; sourceTree = "<group>"; };
+		D281A73F1AB44BFE00106A7C /* libfftw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3.a; path = ../../../../../../usr/local/lib/libfftw3.a; sourceTree = "<group>"; };
+		D281A7401AB44BFE00106A7C /* libfftw3f.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f.a; path = ../../../../../../usr/local/lib/libfftw3f.a; sourceTree = "<group>"; };
+		D281A7431AB44C0700106A7C /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = ../../../../../../usr/local/lib/libavcodec.a; sourceTree = "<group>"; };
+		D281A7451AB44C0A00106A7C /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavdevice.a; path = ../../../../../../usr/local/lib/libavdevice.a; sourceTree = "<group>"; };
+		D281A7471AB44C4F00106A7C /* libvorbis.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvorbis.a; path = ../../../../../../usr/local/lib/libvorbis.a; sourceTree = "<group>"; };
+		D281A7491AB44C6000106A7C /* libsamplerate.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsamplerate.a; path = ../../../../../../usr/local/lib/libsamplerate.a; sourceTree = "<group>"; };
+		D281A74B1AB44C6B00106A7C /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavfilter.a; path = ../../../../../../usr/local/lib/libavfilter.a; sourceTree = "<group>"; };
+		D281A74D1AB44C7D00106A7C /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = ../../../../../../usr/local/lib/libavformat.a; sourceTree = "<group>"; };
+		D281A74F1AB44C8500106A7C /* libavresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavresample.a; path = ../../../../../../usr/local/lib/libavresample.a; sourceTree = "<group>"; };
+		D281A7511AB44C9D00106A7C /* libtag.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.dylib; path = ../../../../../../usr/local/lib/libtag.dylib; sourceTree = "<group>"; };
+		D281A7531AB44CA200106A7C /* libyaml.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libyaml.a; path = ../../../../../../usr/local/lib/libyaml.a; sourceTree = "<group>"; };
+		D281A7551AB44CA900106A7C /* libessentia.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libessentia.a; path = ../../../../../../usr/local/lib/libessentia.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D281A7301AB448C300106A7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D281A74E1AB44C7D00106A7C /* libavformat.a in Frameworks */,
+				D281A7441AB44C0700106A7C /* libavcodec.a in Frameworks */,
+				D281A7461AB44C0A00106A7C /* libavdevice.a in Frameworks */,
+				D281A7411AB44BFE00106A7C /* libfftw3.a in Frameworks */,
+				D281A7421AB44BFE00106A7C /* libfftw3f.a in Frameworks */,
+				D281A7501AB44C8500106A7C /* libavresample.a in Frameworks */,
+				D281A7481AB44C4F00106A7C /* libvorbis.a in Frameworks */,
+				D281A73E1AB44BED00106A7C /* libavutil.a in Frameworks */,
+				D281A74A1AB44C6000106A7C /* libsamplerate.a in Frameworks */,
+				D281A74C1AB44C6B00106A7C /* libavfilter.a in Frameworks */,
+				D281A7521AB44C9D00106A7C /* libtag.dylib in Frameworks */,
+				D281A7541AB44CA200106A7C /* libyaml.a in Frameworks */,
+				D281A7561AB44CA900106A7C /* libessentia.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D281A72A1AB448C300106A7C = {
+			isa = PBXGroup;
+			children = (
+				D281A7551AB44CA900106A7C /* libessentia.a */,
+				D281A7531AB44CA200106A7C /* libyaml.a */,
+				D281A7511AB44C9D00106A7C /* libtag.dylib */,
+				D281A74F1AB44C8500106A7C /* libavresample.a */,
+				D281A74D1AB44C7D00106A7C /* libavformat.a */,
+				D281A74B1AB44C6B00106A7C /* libavfilter.a */,
+				D281A7491AB44C6000106A7C /* libsamplerate.a */,
+				D281A7471AB44C4F00106A7C /* libvorbis.a */,
+				D281A7451AB44C0A00106A7C /* libavdevice.a */,
+				D281A7431AB44C0700106A7C /* libavcodec.a */,
+				D281A73F1AB44BFE00106A7C /* libfftw3.a */,
+				D281A7401AB44BFE00106A7C /* libfftw3f.a */,
+				D281A73D1AB44BED00106A7C /* libavutil.a */,
+				D281A7351AB448C300106A7C /* XCodeExampleProject */,
+				D281A7341AB448C300106A7C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D281A7341AB448C300106A7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D281A7331AB448C300106A7C /* XCodeExampleProject */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D281A7351AB448C300106A7C /* XCodeExampleProject */ = {
+			isa = PBXGroup;
+			children = (
+				D281A7361AB448C300106A7C /* main.cpp */,
+			);
+			path = XCodeExampleProject;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D281A7321AB448C300106A7C /* XCodeExampleProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D281A73A1AB448C300106A7C /* Build configuration list for PBXNativeTarget "XCodeExampleProject" */;
+			buildPhases = (
+				D281A72F1AB448C300106A7C /* Sources */,
+				D281A7301AB448C300106A7C /* Frameworks */,
+				D281A7311AB448C300106A7C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XCodeExampleProject;
+			productName = XCodeExampleProject;
+			productReference = D281A7331AB448C300106A7C /* XCodeExampleProject */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D281A72B1AB448C300106A7C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = MTG;
+				TargetAttributes = {
+					D281A7321AB448C300106A7C = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = D281A72E1AB448C300106A7C /* Build configuration list for PBXProject "XCodeExampleProject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D281A72A1AB448C300106A7C;
+			productRefGroup = D281A7341AB448C300106A7C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D281A7321AB448C300106A7C /* XCodeExampleProject */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D281A72F1AB448C300106A7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D281A7371AB448C300106A7C /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D281A7381AB448C300106A7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D281A7391AB448C300106A7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D281A73B1AB448C300106A7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+					/usr/local/include/taglib/,
+					/usr/local/include/essentia/,
+					"/usr/local/include/libavodec/**",
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D281A73C1AB448C300106A7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+					/usr/local/include/taglib/,
+					/usr/local/include/essentia/,
+					"/usr/local/include/libavodec/**",
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D281A72E1AB448C300106A7C /* Build configuration list for PBXProject "XCodeExampleProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D281A7381AB448C300106A7C /* Debug */,
+				D281A7391AB448C300106A7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D281A73A1AB448C300106A7C /* Build configuration list for PBXNativeTarget "XCodeExampleProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D281A73B1AB448C300106A7C /* Debug */,
+				D281A73C1AB448C300106A7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D281A72B1AB448C300106A7C /* Project object */;
+}
