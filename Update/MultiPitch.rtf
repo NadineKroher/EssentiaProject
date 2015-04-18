@@ -1,0 +1,36 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red234\green234\blue234;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 Multi-pitch estimation for Essentia\
+\
+Definition: \
+- there are three stages of multi-pitch analysis: estimation, note-tracking and streaming\
+(http://www.ece.rochester.edu/~zduan/multipitch/multipitch.html#estimation)\
+- we are looking for a multi-pitch estimation algorithm to start with: \'93
+\f1 \cb2 Multi-pitch Estimation is to collectively estimate pitch values of all concurrent sources at each individual time frame, without determining their sources\'94
+\f0 \cb1 \
+\
+Criteria for algorithm selection:\
+- acceptable results\
+- can be implemented on the basis of existing framework \'97> exclude machine learning, deep learning etc. \
+- sufficient documentation\
+- ideally there is an existing implementation which can be ported to Essentia\
+\
+The best choice in terms of reproducibility and performance seems to be:\
+\pard\pardeftab720\sa320
+
+\f1 \cf0 \cb2 Zhiyao Duan, Bryan Pardo and Changshui Zhang, Multiple fundamental frequency estimation by modeling spectral peaks and non-peak regions, IEEE Trans. Audio Speech Language Process., vol. 18, no. 8, pp. 2121-2133, 2010.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0 \cf0 \cb1 - existing Matlab implementation\
+- well documented\
+- example files with results for verification of the implementation\
+- several existing processing blocks of Essentia can be reused\
+- among the best performing algorithms in MIREX 2010 with results slightly below the winners of 2014\
+\
+\
+\
+}
