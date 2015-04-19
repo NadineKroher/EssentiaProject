@@ -1,2 +1,6 @@
 
 *.xcindexdb
+
+*.idx
+
+*.xcactivitylog
