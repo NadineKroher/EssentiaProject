@@ -1,0 +1,39 @@
+This code performs Multi-pitch Estimation (MPE) on polyphonic music and multi-talker speech. It estimates pitches and the number of pitches (i.e. polyphony) in each time frame.
+
+
+------------------Algorithm-------------------
+The algorithm is described in the following paper:
+[1] Zhiyao Duan, Bryan Pardo and Changshui Zhang, Multiple fundamental frequency estimation by modeling spectral peaks and non-peak regions, IEEE Trans. Audio Speech Language Process., vol. 18, no. 8, pp. 2121-2133, 2010.
+----------------------------------------------
+
+
+-------------------Content--------------------
+"doMPE.m" is the main function. Help it to see its input/output and example usage.
+
+"SetParameters_music.m" and "SetParameters_speech.m" are the files where all the parameters are specified. Typical values of parameters for music and speech are provided.
+
+"example/" stores a couple of example audio files.
+
+"model/" stores learned statistics of F0-peak and F0-harmonic relations from music and speech training data, which are required in the multi-pitch estimation stage.
+
+"model_learning/" stores code to learn the models from training data. These code calls functions in the main folder. To run them, add this subfolder to the Matlab path, but remain the Matlab path to be at the main folder. The model learning code calls three functions (gmmest.m, gmmplot.m, and gmmval.m) in the GMM toolbox written by Dan Ellis. These functions are included in this subfolder. The model learning code for music data also calls the YIN pitch detection toolbox written by Alain de Cheveigné. This toolbox can be downloaded at http://www.ee.columbia.edu/~dpwe/LabROSA/doc/.
+-----------------------------------------------
+
+
+-------------------Usage-----------------------
+1. (optional) Learning model parameters from training data. Run functions in the "model_learning/" subfolder to learn model parameters from your specific traning data. Store the learned models in the "model/" subfolder. You may skip this step by using the provided general music or speech models in the "model/" folder. If you want to run MPE on some specific music instruments or human talkers, learning your own models on the training data of these specific instruments or talkers will improve the MPE performance.
+
+2. Run "doMPE.m" to estimate pitches and instantaneous polyphony in each audio frame.
+  a. if the instantaneous polyphony is known, you can modify the code to just output the first several pitch estimates in EstAllF0. The pitch estimates are ordered in the decreasing order of their salience.
+  b. if the instantaneous polyphony is not known, but the maximum polyphony (e.g. the number of talkers) is known, you can set the parameter "maxF0Num" to this number and run the program. The number of estimated pitches in each frame will not exceed this number.
+-----------------------------------------------
+
+
+-------------------Contact---------------------
+Zhiyao Duan (zhiyaoduan00<at>gmail[dot]com)
+
+Interactive Audio Lab
+Department of Electrical Engineering and Computer Science
+Northwestern University
+Evanston, IL 60208, USA.
+-----------------------------------------------
