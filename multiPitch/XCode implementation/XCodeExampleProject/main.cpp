@@ -64,7 +64,7 @@ int main(int argc, const char * argv[]) {
     AlgorithmFactory& factory = standard::AlgorithmFactory::instance();
     
     // LOAD AUDIO
-    string audioFilename="/Users/GinSonic/MTG/EssentiaProject/Data/multiPitch/test.wav";
+    string audioFilename="/Users/GinSonic/MTG/EssentiaProject/Data/multiPitch/sine.wav";
 
     Algorithm* audioLoader = factory.create("MonoLoader","filename", audioFilename,"sampleRate", 44100);
     vector<Real> audioSamples;
@@ -77,55 +77,78 @@ int main(int argc, const char * argv[]) {
     ///////////////////////////////////////////////////
     
     // algorithm setup
-    vector<Real> frame, windowedFrame, spectrum, peakFrequencies, peakMagnitudes;
+    vector<Real> frame, windowedFrame, spectrum, fSpectrum, peakBins, peakMags, relMags;
     
     Algorithm* frameCutter=factory.create("FrameCutter", "frameSize", frameLen, "hopSize", hop, "startFromZero", true);
     frameCutter->input("signal").set(audioSamples);
     frameCutter->output("frame").set(frame);
     frameCutter->reset();
     
-    Algorithm* window=factory.create("Windowing", "type", "hann");
+    Algorithm* window=factory.create("Windowing", "type", "hann", "zeroPadding", (zpf-1)*frameLen);
     window->input("frame").set(frame);
     window->output("frame").set(windowedFrame);
     
-    Algorithm* spec=factory.create("Spectrum", "size", frameLen*zpf);
+    Algorithm* spec=factory.create("Spectrum", "size", zpf*frameLen);
     spec->input("frame").set(windowedFrame);
     spec->output("spectrum").set(spectrum);
     
-    Algorithm* spectralPeaks=factory.create("SpectralPeaks", "sampleRate", 44100);
-    spectralPeaks->input("spectrum").set(spectrum);
-    spectralPeaks->output("frequencies").set(peakFrequencies);
-    spectralPeaks->output("magnitudes").set(peakMagnitudes);
+    Algorithm* mov=factory.create("MovingAverage", "size", 40);
+    mov->input("signal").set(spectrum);
+    mov->output("signal").set(fSpectrum);
+    
+    Algorithm* spectralPeaks=factory.create("PeakDetection", "range", zpf*frameLen*0.5, "minPosition", 1, "maxPosition", zpf*frameLen*0.5, "threshold",0.0); // we don't use spectralPeaks, since we need the bins and not the corresponding frequencies
+    spectralPeaks->input("array").set(spectrum);
+    spectralPeaks->output("positions").set(peakBins);
+    spectralPeaks->output("amplitudes").set(peakMags);
     
     // output storage
-    vector<int> FrameIndex;  // silent frame=1; non-silent frame=0;
-    vector<vector<Real> > allPeakFrequencies, allPeakMagnitudes;
-    
+    vector<vector<Real> > PeakData; // peak frequency bins for each frames
+    vector<vector<Real> > PeakAmpData; // peak magnitudes for each frames
+    vector<vector<Real> > RelPeakAmpData; // rel. peak magnitudes for each frame
+    vector<int> PeakNum; // number of peaks in each frame
+    int numFrames=0;
     
     // frame-wise processing
     while (true){
         
+        relMags.clear();
         frameCutter->compute(); // get a frame
         
         if (!frame.size()){ // end of track is reached
             break;
         }
+        numFrames++;
         
         if (isSilent(frame)){
-            FrameIndex.push_back(1);
-        }else{
-            FrameIndex.push_back(0);
+            peakBins.clear();
+            peakMags.clear();
+            PeakData.push_back(peakBins);
+            PeakAmpData.push_back(peakMags);
+            continue;
         }
         
         // spectral peaks
         window->compute();
         spec->compute();
+        mov->compute();
+        
+        for (int i=0; i<spectrum.size(); i++){
+            spectrum[i]=20*log10(spectrum[i]*817); // dB magnitude + scaling for Matlab comparison
+            fSpectrum[i]=20*log10(fSpectrum[i]*817);
+        }
+        
         spectralPeaks->compute();
         
-        allPeakFrequencies.push_back(peakFrequencies);
-        allPeakMagnitudes.push_back(peakMagnitudes);
+        for (int i=0; i<peakMags.size(); i++){ // convert magnitude
+            relMags.push_back(spectrum[round(peakBins[i])]-fSpectrum[round(peakBins[i])]);
+            //cout << spectrum[round(peakBins[i])] << "   " << fSpectrum[round(peakBins[i])] << endl;
+        }
         
+        PeakData.push_back(peakBins);
+        PeakAmpData.push_back(peakMags);
+        RelPeakAmpData.push_back(relMags);
     }
+    
     
     return 0;
 }
