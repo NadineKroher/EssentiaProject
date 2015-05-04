@@ -77,7 +77,7 @@ int main(int argc, const char * argv[]) {
     ///////////////////////////////////////////////////
     
     // algorithm setup
-    vector<Real> frame, windowedFrame, spectrum, fSpectrum, peakBins, peakMags, relMags;
+    vector<Real> frame, windowedFrame, spectrum, fSpectrum, peakBins, peakMags, peakBinsP, peakMagsP, relMagsP;
     
     Algorithm* frameCutter=factory.create("FrameCutter", "frameSize", frameLen, "hopSize", hop, "startFromZero", true);
     frameCutter->input("signal").set(audioSamples);
@@ -92,14 +92,14 @@ int main(int argc, const char * argv[]) {
     spec->input("frame").set(windowedFrame);
     spec->output("spectrum").set(spectrum);
     
-    Algorithm* mov=factory.create("MovingAverage", "size", 40);
+    Algorithm* mov=factory.create("MovingAverage","size", int(400*zpf*frameLen/44100));
     mov->input("signal").set(spectrum);
     mov->output("signal").set(fSpectrum);
     
-    Algorithm* spectralPeaks=factory.create("PeakDetection", "range", zpf*frameLen*0.5, "minPosition", 1, "maxPosition", zpf*frameLen*0.5, "threshold",0.0); // we don't use spectralPeaks, since we need the bins and not the corresponding frequencies
-    spectralPeaks->input("array").set(spectrum);
-    spectralPeaks->output("positions").set(peakBins);
-    spectralPeaks->output("amplitudes").set(peakMags);
+    Algorithm* spectralPeaks=factory.create("SpectralPeaks","magnitudeThreshold",-50);
+    spectralPeaks->input("spectrum").set(spectrum);
+    spectralPeaks->output("frequencies").set(peakBins);
+    spectralPeaks->output("magnitudes").set(peakMags);
     
     // output storage
     vector<vector<Real> > PeakData; // peak frequency bins for each frames
@@ -111,7 +111,12 @@ int main(int argc, const char * argv[]) {
     // frame-wise processing
     while (true){
         
-        relMags.clear();
+        peakBins.clear();
+        peakBinsP.clear();
+        peakMags.clear();
+        peakMagsP.clear();
+        relMagsP.clear();
+        
         frameCutter->compute(); // get a frame
         
         if (!frame.size()){ // end of track is reached
@@ -120,33 +125,39 @@ int main(int argc, const char * argv[]) {
         numFrames++;
         
         if (isSilent(frame)){
-            peakBins.clear();
-            peakMags.clear();
-            PeakData.push_back(peakBins);
-            PeakAmpData.push_back(peakMags);
+            peakBinsP.clear();
+            peakMagsP.clear();
+            relMagsP.clear();
+            PeakData.push_back(peakBinsP);
+            PeakAmpData.push_back(peakMagsP);
+            RelPeakAmpData.push_back(relMagsP);
             continue;
         }
         
         // spectral peaks
         window->compute();
         spec->compute();
-        mov->compute();
-        
-        for (int i=0; i<spectrum.size(); i++){
-            spectrum[i]=20*log10(spectrum[i]*817); // dB magnitude + scaling for Matlab comparison
-            fSpectrum[i]=20*log10(fSpectrum[i]*817);
+        float ma=spectrum[argmax(spectrum)];
+        // get log spectrum
+        for (int ii=0; ii<spectrum.size(); ii++){
+            spectrum[ii]=20*log10(spectrum[ii]/ma);
         }
-        
         spectralPeaks->compute();
-        
-        for (int i=0; i<peakMags.size(); i++){ // convert magnitude
-            relMags.push_back(spectrum[round(peakBins[i])]-fSpectrum[round(peakBins[i])]);
-            //cout << spectrum[round(peakBins[i])] << "   " << fSpectrum[round(peakBins[i])] << endl;
+        mov->compute();
+        for (int ii=0; ii<peakBins.size(); ii++){
+            int bin=round(zpf*frameLen*peakBins[ii]/44100); // get relative magnitude
+            float rMag=peakMags[ii]-fSpectrum[bin];
+            if (rMag>5 && peakBins[ii]>50 && peakBins[ii]<5000){ // select only peaks above the local threshold
+                peakBinsP.push_back(peakBins[ii]);
+                peakMagsP.push_back(peakMags[ii]);
+                relMagsP.push_back(rMag);
+            }
         }
-        
-        PeakData.push_back(peakBins);
-        PeakAmpData.push_back(peakMags);
-        RelPeakAmpData.push_back(relMags);
+
+        cout << peakBinsP << endl;
+        PeakData.push_back(peakBinsP);
+        PeakAmpData.push_back(peakMagsP);
+        RelPeakAmpData.push_back(relMagsP);
     }
     
     
