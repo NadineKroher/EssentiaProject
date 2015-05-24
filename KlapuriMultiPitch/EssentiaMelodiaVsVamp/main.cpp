@@ -19,7 +19,7 @@ using namespace essentia::standard;
 int main(int argc, const char * argv[]) {
     
     // file path
-    string audioFilename="/Users/GinSonic/MTG/EssentiaProject/MelodiaMultiPitch/EssentiaMelodiaVsVamp/test2.wav";
+    string audioFilename="/Users/GinSonic/MTG/EssentiaProject/KlapuriMultiPitch/EssentiaMelodiaVsVamp/test.wav";
     
     // parameters
     int sampleRate = 44100;
@@ -44,12 +44,15 @@ int main(int argc, const char * argv[]) {
     multiPitch->compute();
     
     // write to file
-    string csvFilenameMulti="/Users/GinSonic/MTG/EssentiaProject/MelodiaMultiPitch/EssentiaMelodiaVsVamp/test2.csv";
+    string csvFilenameMulti="/Users/GinSonic/MTG/EssentiaProject/KlapuriMultiPitch/EssentiaMelodiaVsVamp/test.csv";
     ofstream outFileMulti;
     outFileMulti.open(csvFilenameMulti);
     for (int ii=0; ii<pitchMulti.size(); ii++){
+        cout << pitchMulti[ii] << endl;
         for (int jj=0; jj<pitchMulti[ii].size(); jj++){
+            
             outFileMulti <<  float(ii)*hopSize/sampleRate << ", " << pitchMulti[ii][jj] << endl;
+            cout << float(ii)*hopSize/sampleRate << ", " << pitchMulti[ii][jj] << endl;
         }
     }
     

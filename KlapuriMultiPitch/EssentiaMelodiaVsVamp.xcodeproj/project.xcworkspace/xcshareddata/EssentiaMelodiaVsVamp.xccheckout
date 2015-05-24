@@ -22,7 +22,7 @@
 		<key>39B7247021E94C4BF1C0C7C2E7AFE6CC83EC5CEE</key>
 		<string>../../..</string>
 		<key>EC07984C32C6335110112EAAAF769090A8BB1FF7</key>
-		<string>../../../../../GIT/essentiaFork</string>
+		<string>../../../../GIT/essentiaFork</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/NadineKroher/EssentiaProject.git</string>
