@@ -1,0 +1,9 @@
+Update 03/06
+
+- code cleaning and some bug fixes of all implemented algorithms
+- incorporation in Essentia release
+- conceptual considerations for the implementation of the note segmented in streaming mode
+
+To do: 
+- presentations MHD / Sonar
+- finish streaming mode
