@@ -31,7 +31,7 @@ int main(int argc, const char * argv[]) {
     AlgorithmFactory& factory = standard::AlgorithmFactory::instance();
     
     Algorithm* audio = factory.create("MonoLoader","filename", audioFilename,"sampleRate", sampleRate);
-    Algorithm* multiPitch = factory.create("MultiPitch", "sampleRate", sampleRate);
+    Algorithm* multiPitch = factory.create("MultiPitchKlapuri", "sampleRate", sampleRate);
     vector<Real> audioVec;
     vector<vector<Real> >pitchMulti;
     
